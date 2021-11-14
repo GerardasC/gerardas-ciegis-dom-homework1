@@ -15,13 +15,13 @@ class API {
   }
 }
 
-API.fetchToys(
-  console.log,
-  console.log
-)
+// API.fetchToys(
+//   console.log,
+//   console.log
+// )
 
-API.deleteToy(
-  "1",
-  () => console.log('Istrinta'),
-  console.error
-)
+// API.deleteToy(
+//   "1",
+//   () => console.log('Istrinta'),
+//   console.error
+// )
