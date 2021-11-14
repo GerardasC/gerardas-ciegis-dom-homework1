@@ -87,7 +87,7 @@
     "ageRestrictions": null,
     "discount": {
       "type": "amount",
-      "amount": 3
+      "amount": 2
     },
     "imgSrc": "https://www.frogstore.com/images/P/n9168.jpg"
   }

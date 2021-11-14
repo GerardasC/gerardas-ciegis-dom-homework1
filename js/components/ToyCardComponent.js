@@ -6,17 +6,6 @@ class ToyCardComponent {
     this.init();
   }
 
-  // fortmatBadge = (content) => 
-  // `<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success ms-4">${content}</span>`;
-
-  checkCurrency = () => {
-    const {
-      price: { currency },
-      discount: { amount: value }
-    } = this.props;
-    return currency === '$' ? value * ToyCardComponent.USD_EUR : value
-  }
-
   formatPrice = () => {
     let {
       price: { currency, amount },
@@ -24,7 +13,6 @@ class ToyCardComponent {
     } = this.props;
     
     amount = currency === '$' ? amount * ToyCardComponent.USD_EUR : amount;
-    // console.log(amount)
     value = currency === '$' ? value * ToyCardComponent.USD_EUR : value;
 
     let finalPrice;
@@ -37,7 +25,6 @@ class ToyCardComponent {
       finalPrice = value;
     } else {
       finalPrice = amount * (1 - value / 100);
-      console.log(finalPrice)
       discountBadge = `-${value} %`;
     }
     
@@ -54,7 +41,7 @@ class ToyCardComponent {
   }
 
   init = () => {
-    const { title, imgSrc } = this.props
+    const { title, imgSrc, onDelete } = this.props
     this.htmlElement = document.createElement('article');
     this.htmlElement.className = 'card p-3 shadow';
     this.htmlElement.innerHTML = `
@@ -62,9 +49,14 @@ class ToyCardComponent {
     <div class="card-body">
       <h2 class="h5">${title}</h2>
       <div>
-      ${this.formatPrice()}
+        ${this.formatPrice()}
       </div>
-      ${this.ageRestriction()}
+        ${this.ageRestriction()}
+    <div class="text-center">
+      <button class="btn btn-danger">Ištrinti</button>
+    </div>
     `
+    const btn = this.htmlElement.querySelector('.btn');
+    btn.addEventListener('click', onDelete);
   }
 }

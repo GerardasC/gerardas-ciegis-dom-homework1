@@ -20,6 +20,14 @@ class ToysGridComponent {
     this.state.loading = false;
     this.render();
   }
+
+  deleteToy = (id) => {
+    API.deleteToy(
+      id,
+      () => API.fetchToys(this.saveToys, alert),
+      alert
+    )
+  }
   
   init = () => {
     this.state.loading = true;
@@ -43,7 +51,10 @@ class ToysGridComponent {
     } else {
       this.htmlElement.innerHTML = '';
       const toyElements = toys
-        .map(x => new ToyCardComponent(x))
+        .map(({ id, ...props }) => new ToyCardComponent({
+          ...props,
+          onDelete: () => this.deleteToy(id)
+        }))
         .map(x => x.htmlElement)
         .map(this.wrapInColumn);
 
