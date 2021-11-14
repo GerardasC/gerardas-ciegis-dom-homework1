@@ -1,0 +1,83 @@
+1. Sukurkite repozitoriją, kurioje atliksite darbus. [1]
+  - papildykite .gitignore failą, jog nebūtų reaguojama į
+    * /node_modules aplanko pasikeitimus.
+    * package-lock.json failo pakeitimus.
+  - Šį commit'ą pavadinkite '1: init'
+  - Po kiekvienos sekančios užduoties atlikite commit'ą įvardindami ką darėte.
+
+2. Sukurkite pardavimui skirtų automobilių masyvą naudodami JSON server. [1]
+    - Daiktus sukurkite taip, jog būtų panaudotos visos savybių variacijos.
+    - Taip pat rekomenduojama susikurti json duomenų kopiją, jog aplikacijai pakeitus duomenis būtų galima persikopijuoti orginalius/pradinius duomenis.
+    - Baldą aprašančios savybės:
+      type Furniture = {
+        id: string;
+        title: string;
+        type: string;
+        price: number;
+        location: {
+          country: string;
+          city: string;
+          street: string;
+        }
+        owner: {
+          fullname: string;
+          mobile: string;
+          address: string;
+          email: string
+        },
+        imgSrc: string;
+      }
+
+3. Sukurkite projekto aprašymą: [1]  
+  - sugeneruokite package.json failą
+  - parsiųskite json-server biblioteką
+  - sukurkite failą readme.md, ir jame aprašykite:
+    - kokių reikia programų
+    - kaip ir ką reikią suinstaliuoti
+    - kaip paleisti projektą
+  - pasileiskite serverį
+
+4. Pasiruoškite komponentų kūrimui: [1]
+  Susikurkite/parsisiųskite  ir strukturizuokite failus:
+    - js/
+      - components/
+        - FurnitureCardComponent.js
+        - FurnitureGridComponent.js
+      - API.js
+      - main.js
+    - index.html
+    - assets/ 
+      - loading.gif
+------------------------
+  * index.html
+    * įsitraukite bootstrap
+    * įsitraukite javaScript failus
+    * sukurkite šakinį elementą, kuriame generuosite turinį su javaScript
+    
+  * js/components/FurnitureGridComponent.js
+        * Sukurkite minimalų komponentą ir htmlElement turinį testavimui
+
+  * js/main.js
+        * Prijunkite FurnitureGridComponent klasės objektą į jau egzistuojantį HTML elementą
+
+5. Sukurkite failą API.js, aprašyti HTTP requestams. Patikrinkite rezultatus konsolėje. [1]
+  HTTP metodas | url              | tikslas
+  ------------------------------------------------------
+  GET          | /furniture       | gauti visus baldus
+  DELETE       | /furniture/{id}  | ištrinti vieną baldą
+
+6. Faile CarGridComponent.js panaudokite API.js faile sukurtą funkciją gauti visiems baldams: [1]
+  - Tol kol siunčiami duomenys parašykite 'siunčiama...'
+  - Parsiuntus užrašykite 'parsiųsta!'
+  
+7. Įgalinti laukimo animaciją, kol yra parsiunčiami duomenys [1]
+  - dirbtinai užvilkinti parsiuntimą 1s, jog matytūsi animaciją
+  - Kol siunčiami duomenys, atvaizduokite animaciją
+  - Parsiuntus duomenis atvaizduokite minimalius kortelių elementus, pagal parsiųstus duomenis
+
+8. FurnitureCardComponent klasėje įgalinkite komponeneto atvaizdavimą pagal this.props gautas reikšmes: [1]
+  - Dizainais pasirenkamas laisvi, tačiau turi būt matomi visi duomenys
+
+9. Kiekvienoje FurnitureCardComponent kortelėje sukurkite ištrinimo mygtuką, kuris trintų kortelę ir kortelę atitinkančius duomenis serveryje [2]
+  - Po ištrinimo turi dingti kortelė iš puslapyje matomų komponentų sąrašo ir serverio duomenų.
+
