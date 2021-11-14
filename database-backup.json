@@ -1,0 +1,95 @@
+{ "toys": [
+    {
+      "id": "1",
+      "title": "Car",
+      "price": {
+        "currency": "€",
+        "amount": 10
+      },
+      "ageRestrictions": {
+        "from": 7
+      },
+      "discount": {
+        "type": "percentage",
+        "amount": 20
+      },
+      "imgSrc": "https://static.turbosquid.com/Preview/001298/207/1O/_Z.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Doll",
+      "price": {
+        "currency": "€",
+        "amount": 15
+      },
+      "ageRestrictions": {
+        "from": 6
+      },
+      "discount": {
+        "type": "toFixed",
+        "amount": 11.99
+      },
+      "imgSrc": "https://i5.walmartimages.com/asr/17e66bd1-e2ab-4d5c-82e4-9ade81427556_1.584df3394adc180c05f4970e71366fc2.jpeg"
+    },
+    {
+      "id": "3",
+      "title": "Duck",
+      "price": {
+        "currency": "$",
+        "amount": 11
+      },
+      "ageRestrictions": null,
+      "discount": {
+        "type": "amount",
+        "amount": 2
+      },
+      "imgSrc": "https://ksd-images.lt/display/aikido/store/b905995213c86d52b3a09f6bf8ee1c4e.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Robot",
+      "price": {
+        "currency": "€",
+        "amount": 20
+      },
+      "ageRestrictions": {
+        "from": 7
+      },
+      "discount": {
+        "type": "percentage",
+        "amount": 10
+      },
+      "imgSrc": "https://static.turbosquid.com/Preview/2014/05/20__23_05_46/01signature.jpga285feb5-cafd-49c6-a12d-fefaa171417dDefaultHQ.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Ball",
+      "price": {
+        "currency": "€",
+        "amount": 11.99
+      },
+      "ageRestrictions": {
+        "from": 6
+      },
+      "discount": {
+        "type": "toFixed",
+        "amount": 7.99
+      },
+      "imgSrc": "https://img.joomcdn.net/002e9bcf36c4d227358a206aed7bc77b6de1765b_original.jpeg"
+    },
+    {
+      "id": "6",
+      "title": "Frog",
+      "price": {
+        "currency": "$",
+        "amount": 9.99
+      },
+      "ageRestrictions": null,
+      "discount": {
+        "type": "amount",
+        "amount": 2
+      },
+      "imgSrc": "https://www.frogstore.com/images/P/n9168.jpg"
+    }
+  ]
+}
