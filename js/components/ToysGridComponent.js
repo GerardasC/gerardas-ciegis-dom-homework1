@@ -31,7 +31,7 @@ class ToysGridComponent {
 
   wrapInColumn = (element) => {
     const column = document.createElement('div');
-    column.className = 'col-12 col-sm-6 col-lg-4 col-xl-3';
+    column.className = 'col-12 col-sm-6 col-lg-4 col-xl-3 d-flex align-items-stretch';
     column.appendChild(element);
     return column;
   }
