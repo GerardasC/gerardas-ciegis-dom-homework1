@@ -10,9 +10,18 @@ class ToysGridComponent {
   
   fetchToys = () => setTimeout ( () => {
     
-    API.fetchToys(this.saveToys, alert)
-  
-  }, 1000)
+    return API.fetchToys(
+      (toys) => {
+        this.state.loading = false;
+        this.saveToys(toys);
+      },
+      (err) => {
+        alert(err);
+        this.state.loading = false;
+        this.render();
+      }
+    );
+ },1000)
 
 
   saveToys = (toys) => {
@@ -48,7 +57,7 @@ class ToysGridComponent {
     const {loading, toys} = this.state;
     if (loading) {
       this.htmlElement.innerHTML = '<div class="text-center"><img src="assets/loading.gif"/></div>'
-    } else {
+    } else if (toys.length > 0) {
       this.htmlElement.innerHTML = '';
       const toyElements = toys
         .map(({ id, ...props }) => new ToyCardComponent({
@@ -59,6 +68,8 @@ class ToysGridComponent {
         .map(this.wrapInColumn);
 
         this.htmlElement.append(...toyElements);
+    } else {
+      this.htmlElement.innerHTML = `<h2>Šiuo metu žaislų neturime</h2>`;
     }
   }
 
