@@ -46,13 +46,13 @@ class ToyCardComponent {
     this.htmlElement.className = 'card p-3 shadow';
     this.htmlElement.innerHTML = `
     <img src="${imgSrc}" class="card-img-top"/ height="300px" style="object-fit: cover">
-    <div class="card-body">
+    <div class="card-body d-flex flex-column">
       <h2 class="h5">${title}</h2>
       <div>
         ${this.formatPrice()}
       </div>
         ${this.ageRestriction()}
-    <div class="text-center">
+    <div class="text-center mt-auto">
       <button class="btn btn-danger">Ištrinti</button>
     </div>
     `
